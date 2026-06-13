@@ -161,9 +161,9 @@ function ProjectsIndex() {
 
         {totalPages > 1 && (
           <nav aria-label="Pagination" className="mt-10 flex items-center justify-center gap-2">
-            <Button variant="outline" disabled={page <= 1} onClick={() => navigate({ search: (p) => ({ ...p, page: page - 1 }) })}>Previous</Button>
+            <Button variant="outline" disabled={page <= 1} onClick={() => navigate({ search: (p: SearchT) => ({ ...p, page: page - 1 }) })}>Previous</Button>
             <span className="text-sm text-muted-foreground">Page {page} of {totalPages}</span>
-            <Button variant="outline" disabled={page >= totalPages} onClick={() => navigate({ search: (p) => ({ ...p, page: page + 1 }) })}>Next</Button>
+            <Button variant="outline" disabled={page >= totalPages} onClick={() => navigate({ search: (p: SearchT) => ({ ...p, page: page + 1 }) })}>Next</Button>
           </nav>
         )}
       </Section>

@@ -34,7 +34,7 @@ export const Route = createFileRoute("/projects/compare")({
 function CompareProjects() {
   const { ids } = Route.useSearch();
   const navigate = Route.useNavigate();
-  const slugs = ids.split(",").map((s) => s.trim()).filter(Boolean).slice(0, 4);
+  const slugs = ids.split(",").map((s: string) => s.trim()).filter(Boolean).slice(0, 4);
   const selected = slugs.map(getProject).filter(Boolean) as ReturnType<typeof getProject>[] as NonNullable<ReturnType<typeof getProject>>[];
 
   useEffect(() => {
@@ -48,7 +48,7 @@ function CompareProjects() {
     navigate({ search: { ids: next.slice(0, 4).join(",") } });
   };
   const add = (slug: string) => setSlugs([...slugs, slug]);
-  const remove = (slug: string) => setSlugs(slugs.filter((s) => s !== slug));
+  const remove = (slug: string) => setSlugs(slugs.filter((s: string) => s !== slug));
 
   const fmt = (n: number) => `$${(n / 1_000_000).toFixed(1)}M`;
 
