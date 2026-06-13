@@ -22,6 +22,7 @@ const schema = z.object({
   sort: fallback(z.enum(["recent", "budget", "size"]), "recent").default("recent"),
   page: fallback(z.number().int().min(1), 1).default(1),
 });
+type SearchT = z.infer<typeof schema>;
 
 const PAGE_SIZE = 9;
 
@@ -87,23 +88,23 @@ function ProjectsIndex() {
               <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
               <Input aria-label="Search projects" placeholder="Search projects..." className="pl-9"
                 value={search.q}
-                onChange={(e) => navigate({ search: (p) => ({ ...p, q: e.target.value, page: 1 }) })} />
+                onChange={(e) => navigate({ search: (p: SearchT) => ({ ...p, q: e.target.value, page: 1 }) })} />
             </div>
-            <Select value={search.category} onValueChange={(v) => navigate({ search: (p) => ({ ...p, category: v, page: 1 }) })}>
+            <Select value={search.category} onValueChange={(v) => navigate({ search: (p: SearchT) => ({ ...p, category: v, page: 1 }) })}>
               <SelectTrigger aria-label="Filter by category"><SelectValue placeholder="Category" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All categories</SelectItem>
                 {projectCategories.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}
               </SelectContent>
             </Select>
-            <Select value={search.industry} onValueChange={(v) => navigate({ search: (p) => ({ ...p, industry: v, page: 1 }) })}>
+            <Select value={search.industry} onValueChange={(v) => navigate({ search: (p: SearchT) => ({ ...p, industry: v, page: 1 }) })}>
               <SelectTrigger aria-label="Filter by industry"><SelectValue placeholder="Industry" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All industries</SelectItem>
                 {industries.map((i) => <SelectItem key={i.slug} value={i.slug}>{i.name}</SelectItem>)}
               </SelectContent>
             </Select>
-            <Select value={search.sort} onValueChange={(v) => navigate({ search: (p) => ({ ...p, sort: v as "recent" | "budget" | "size", page: 1 }) })}>
+            <Select value={search.sort} onValueChange={(v) => navigate({ search: (p: SearchT) => ({ ...p, sort: v as SearchT["sort"], page: 1 }) })}>
               <SelectTrigger aria-label="Sort projects"><SelectValue /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="recent">Most recent</SelectItem>
