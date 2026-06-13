@@ -9,14 +9,64 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as SafetyRouteImport } from './routes/safety'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as QuoteRequestRouteImport } from './routes/quote-request'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TeamIndexRouteImport } from './routes/team.index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
+import { Route as NewsIndexRouteImport } from './routes/news.index'
+import { Route as IndustriesIndexRouteImport } from './routes/industries.index'
+import { Route as CareersIndexRouteImport } from './routes/careers.index'
+import { Route as TeamSlugRouteImport } from './routes/team.$slug'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as ProjectsCompareRouteImport } from './routes/projects.compare'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
+import { Route as NewsSlugRouteImport } from './routes/news.$slug'
+import { Route as IndustriesSlugRouteImport } from './routes/industries.$slug'
+import { Route as CareersSlugRouteImport } from './routes/careers.$slug'
 
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafetyRoute = SafetyRouteImport.update({
+  id: '/safety',
+  path: '/safety',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuoteRequestRoute = QuoteRequestRouteImport.update({
+  id: '/quote-request',
+  path: '/quote-request',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificationsRoute = CertificationsRouteImport.update({
+  id: '/certifications',
+  path: '/certifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -27,6 +77,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TeamIndexRoute = TeamIndexRouteImport.update({
+  id: '/team/',
+  path: '/team/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
@@ -35,6 +90,26 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
 const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
   id: '/projects/',
   path: '/projects/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsIndexRoute = NewsIndexRouteImport.update({
+  id: '/news/',
+  path: '/news/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesIndexRoute = IndustriesIndexRouteImport.update({
+  id: '/industries/',
+  path: '/industries/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersIndexRoute = CareersIndexRouteImport.update({
+  id: '/careers/',
+  path: '/careers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamSlugRoute = TeamSlugRouteImport.update({
+  id: '/team/$slug',
+  path: '/team/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
@@ -52,77 +127,246 @@ const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
   path: '/projects/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsSlugRoute = NewsSlugRouteImport.update({
+  id: '/news/$slug',
+  path: '/news/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesSlugRoute = IndustriesSlugRouteImport.update({
+  id: '/industries/$slug',
+  path: '/industries/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersSlugRoute = CareersSlugRouteImport.update({
+  id: '/careers/$slug',
+  path: '/careers/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/certifications': typeof CertificationsRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/quote-request': typeof QuoteRequestRoute
+  '/resources': typeof ResourcesRoute
+  '/safety': typeof SafetyRoute
+  '/search': typeof SearchRoute
+  '/careers/$slug': typeof CareersSlugRoute
+  '/industries/$slug': typeof IndustriesSlugRoute
+  '/news/$slug': typeof NewsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/compare': typeof ProjectsCompareRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/team/$slug': typeof TeamSlugRoute
+  '/careers/': typeof CareersIndexRoute
+  '/industries/': typeof IndustriesIndexRoute
+  '/news/': typeof NewsIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/team/': typeof TeamIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/certifications': typeof CertificationsRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/quote-request': typeof QuoteRequestRoute
+  '/resources': typeof ResourcesRoute
+  '/safety': typeof SafetyRoute
+  '/search': typeof SearchRoute
+  '/careers/$slug': typeof CareersSlugRoute
+  '/industries/$slug': typeof IndustriesSlugRoute
+  '/news/$slug': typeof NewsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/compare': typeof ProjectsCompareRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/team/$slug': typeof TeamSlugRoute
+  '/careers': typeof CareersIndexRoute
+  '/industries': typeof IndustriesIndexRoute
+  '/news': typeof NewsIndexRoute
   '/projects': typeof ProjectsIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/team': typeof TeamIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/certifications': typeof CertificationsRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/quote-request': typeof QuoteRequestRoute
+  '/resources': typeof ResourcesRoute
+  '/safety': typeof SafetyRoute
+  '/search': typeof SearchRoute
+  '/careers/$slug': typeof CareersSlugRoute
+  '/industries/$slug': typeof IndustriesSlugRoute
+  '/news/$slug': typeof NewsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/compare': typeof ProjectsCompareRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/team/$slug': typeof TeamSlugRoute
+  '/careers/': typeof CareersIndexRoute
+  '/industries/': typeof IndustriesIndexRoute
+  '/news/': typeof NewsIndexRoute
   '/projects/': typeof ProjectsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/team/': typeof TeamIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/certifications'
+    | '/contact'
+    | '/gallery'
+    | '/quote-request'
+    | '/resources'
+    | '/safety'
+    | '/search'
+    | '/careers/$slug'
+    | '/industries/$slug'
+    | '/news/$slug'
     | '/projects/$slug'
     | '/projects/compare'
     | '/services/$slug'
+    | '/team/$slug'
+    | '/careers/'
+    | '/industries/'
+    | '/news/'
     | '/projects/'
     | '/services/'
+    | '/team/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/certifications'
+    | '/contact'
+    | '/gallery'
+    | '/quote-request'
+    | '/resources'
+    | '/safety'
+    | '/search'
+    | '/careers/$slug'
+    | '/industries/$slug'
+    | '/news/$slug'
     | '/projects/$slug'
     | '/projects/compare'
     | '/services/$slug'
+    | '/team/$slug'
+    | '/careers'
+    | '/industries'
+    | '/news'
     | '/projects'
     | '/services'
+    | '/team'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/certifications'
+    | '/contact'
+    | '/gallery'
+    | '/quote-request'
+    | '/resources'
+    | '/safety'
+    | '/search'
+    | '/careers/$slug'
+    | '/industries/$slug'
+    | '/news/$slug'
     | '/projects/$slug'
     | '/projects/compare'
     | '/services/$slug'
+    | '/team/$slug'
+    | '/careers/'
+    | '/industries/'
+    | '/news/'
     | '/projects/'
     | '/services/'
+    | '/team/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CertificationsRoute: typeof CertificationsRoute
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
+  QuoteRequestRoute: typeof QuoteRequestRoute
+  ResourcesRoute: typeof ResourcesRoute
+  SafetyRoute: typeof SafetyRoute
+  SearchRoute: typeof SearchRoute
+  CareersSlugRoute: typeof CareersSlugRoute
+  IndustriesSlugRoute: typeof IndustriesSlugRoute
+  NewsSlugRoute: typeof NewsSlugRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
   ProjectsCompareRoute: typeof ProjectsCompareRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
+  TeamSlugRoute: typeof TeamSlugRoute
+  CareersIndexRoute: typeof CareersIndexRoute
+  IndustriesIndexRoute: typeof IndustriesIndexRoute
+  NewsIndexRoute: typeof NewsIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
+  TeamIndexRoute: typeof TeamIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safety': {
+      id: '/safety'
+      path: '/safety'
+      fullPath: '/safety'
+      preLoaderRoute: typeof SafetyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quote-request': {
+      id: '/quote-request'
+      path: '/quote-request'
+      fullPath: '/quote-request'
+      preLoaderRoute: typeof QuoteRequestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certifications': {
+      id: '/certifications'
+      path: '/certifications'
+      fullPath: '/certifications'
+      preLoaderRoute: typeof CertificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -137,6 +381,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/team/': {
+      id: '/team/'
+      path: '/team'
+      fullPath: '/team/'
+      preLoaderRoute: typeof TeamIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/': {
       id: '/services/'
       path: '/services'
@@ -149,6 +400,34 @@ declare module '@tanstack/react-router' {
       path: '/projects'
       fullPath: '/projects/'
       preLoaderRoute: typeof ProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/': {
+      id: '/news/'
+      path: '/news'
+      fullPath: '/news/'
+      preLoaderRoute: typeof NewsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/': {
+      id: '/industries/'
+      path: '/industries'
+      fullPath: '/industries/'
+      preLoaderRoute: typeof IndustriesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers/': {
+      id: '/careers/'
+      path: '/careers'
+      fullPath: '/careers/'
+      preLoaderRoute: typeof CareersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/$slug': {
+      id: '/team/$slug'
+      path: '/team/$slug'
+      fullPath: '/team/$slug'
+      preLoaderRoute: typeof TeamSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/$slug': {
@@ -172,17 +451,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/news/$slug': {
+      id: '/news/$slug'
+      path: '/news/$slug'
+      fullPath: '/news/$slug'
+      preLoaderRoute: typeof NewsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/$slug': {
+      id: '/industries/$slug'
+      path: '/industries/$slug'
+      fullPath: '/industries/$slug'
+      preLoaderRoute: typeof IndustriesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers/$slug': {
+      id: '/careers/$slug'
+      path: '/careers/$slug'
+      fullPath: '/careers/$slug'
+      preLoaderRoute: typeof CareersSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CertificationsRoute: CertificationsRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
+  QuoteRequestRoute: QuoteRequestRoute,
+  ResourcesRoute: ResourcesRoute,
+  SafetyRoute: SafetyRoute,
+  SearchRoute: SearchRoute,
+  CareersSlugRoute: CareersSlugRoute,
+  IndustriesSlugRoute: IndustriesSlugRoute,
+  NewsSlugRoute: NewsSlugRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
   ProjectsCompareRoute: ProjectsCompareRoute,
   ServicesSlugRoute: ServicesSlugRoute,
+  TeamSlugRoute: TeamSlugRoute,
+  CareersIndexRoute: CareersIndexRoute,
+  IndustriesIndexRoute: IndustriesIndexRoute,
+  NewsIndexRoute: NewsIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
+  TeamIndexRoute: TeamIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
