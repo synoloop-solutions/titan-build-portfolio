@@ -3,7 +3,7 @@ import { Check, ArrowRight } from "lucide-react";
 import { Breadcrumbs, PageHero, Section, SectionHeading } from "@/components/site/section";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { getService, services } from "@/data/services";
+import { getService, services, type Service } from "@/data/services";
 import { projects } from "@/data/projects";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/services/$slug")({
 });
 
 function ServiceDetail() {
-  const { service: s } = Route.useLoaderData();
+  const { service: s } = Route.useLoaderData() as { service: Service };
   const related = projects.filter((p) => p.services.includes(s.slug)).slice(0, 3);
   const other = services.filter((o) => o.slug !== s.slug).slice(0, 3);
   return (
