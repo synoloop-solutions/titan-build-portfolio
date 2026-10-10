@@ -9,92 +9,37 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as SearchRouteImport } from './routes/search'
-import { Route as SafetyRouteImport } from './routes/safety'
-import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as QuoteRequestRouteImport } from './routes/quote-request'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CertificationsRouteImport } from './routes/certifications'
-import { Route as AccessibilityRouteImport } from './routes/accessibility'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as TeamIndexRouteImport } from './routes/team.index'
-import { Route as ServicesIndexRouteImport } from './routes/services.index'
-import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
-import { Route as NewsIndexRouteImport } from './routes/news.index'
-import { Route as IndustriesIndexRouteImport } from './routes/industries.index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
+import { Route as CertificationsRouteImport } from './routes/certifications'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as QuoteRequestRouteImport } from './routes/quote-request'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as SafetyRouteImport } from './routes/safety'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as CareersIndexRouteImport } from './routes/careers.index'
-import { Route as TeamSlugRouteImport } from './routes/team.$slug'
-import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
-import { Route as ProjectsCompareRouteImport } from './routes/projects.compare'
-import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
-import { Route as NewsSlugRouteImport } from './routes/news.$slug'
-import { Route as IndustriesSlugRouteImport } from './routes/industries.$slug'
 import { Route as CareersSlugRouteImport } from './routes/careers.$slug'
+import { Route as IndustriesIndexRouteImport } from './routes/industries.index'
+import { Route as IndustriesSlugRouteImport } from './routes/industries.$slug'
+import { Route as NewsIndexRouteImport } from './routes/news.index'
+import { Route as NewsSlugRouteImport } from './routes/news.$slug'
+import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
+import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
+import { Route as ProjectsCompareRouteImport } from './routes/projects.compare'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as TeamIndexRouteImport } from './routes/team.index'
+import { Route as TeamSlugRouteImport } from './routes/team.$slug'
 
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SearchRoute = SearchRouteImport.update({
-  id: '/search',
-  path: '/search',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SafetyRoute = SafetyRouteImport.update({
-  id: '/safety',
-  path: '/safety',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResourcesRoute = ResourcesRouteImport.update({
-  id: '/resources',
-  path: '/resources',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const QuoteRequestRoute = QuoteRequestRouteImport.update({
-  id: '/quote-request',
-  path: '/quote-request',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CookiePolicyRoute = CookiePolicyRouteImport.update({
-  id: '/cookie-policy',
-  path: '/cookie-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CertificationsRoute = CertificationsRouteImport.update({
-  id: '/certifications',
-  path: '/certifications',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AccessibilityRoute = AccessibilityRouteImport.update({
-  id: '/accessibility',
-  path: '/accessibility',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -102,34 +47,64 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeamIndexRoute = TeamIndexRouteImport.update({
-  id: '/team/',
-  path: '/team/',
+const CertificationsRoute = CertificationsRouteImport.update({
+  id: '/certifications',
+  path: '/certifications',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/services/',
-  path: '/services/',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
-  id: '/projects/',
-  path: '/projects/',
+const CookiePolicyRoute = CookiePolicyRouteImport.update({
+  id: '/cookie-policy',
+  path: '/cookie-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NewsIndexRoute = NewsIndexRouteImport.update({
-  id: '/news/',
-  path: '/news/',
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndustriesIndexRoute = IndustriesIndexRouteImport.update({
-  id: '/industries/',
-  path: '/industries/',
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuoteRequestRoute = QuoteRequestRouteImport.update({
+  id: '/quote-request',
+  path: '/quote-request',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafetyRoute = SafetyRouteImport.update({
+  id: '/safety',
+  path: '/safety',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareersIndexRoute = CareersIndexRouteImport.update({
@@ -137,29 +112,14 @@ const CareersIndexRoute = CareersIndexRouteImport.update({
   path: '/careers/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeamSlugRoute = TeamSlugRouteImport.update({
-  id: '/team/$slug',
-  path: '/team/$slug',
+const CareersSlugRoute = CareersSlugRouteImport.update({
+  id: '/careers/$slug',
+  path: '/careers/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesSlugRoute = ServicesSlugRouteImport.update({
-  id: '/services/$slug',
-  path: '/services/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsCompareRoute = ProjectsCompareRouteImport.update({
-  id: '/projects/compare',
-  path: '/projects/compare',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
-  id: '/projects/$slug',
-  path: '/projects/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsSlugRoute = NewsSlugRouteImport.update({
-  id: '/news/$slug',
-  path: '/news/$slug',
+const IndustriesIndexRoute = IndustriesIndexRouteImport.update({
+  id: '/industries/',
+  path: '/industries/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesSlugRoute = IndustriesSlugRouteImport.update({
@@ -167,9 +127,49 @@ const IndustriesSlugRoute = IndustriesSlugRouteImport.update({
   path: '/industries/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CareersSlugRoute = CareersSlugRouteImport.update({
-  id: '/careers/$slug',
-  path: '/careers/$slug',
+const NewsIndexRoute = NewsIndexRouteImport.update({
+  id: '/news/',
+  path: '/news/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsSlugRoute = NewsSlugRouteImport.update({
+  id: '/news/$slug',
+  path: '/news/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
+  id: '/projects/$slug',
+  path: '/projects/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsCompareRoute = ProjectsCompareRouteImport.update({
+  id: '/projects/compare',
+  path: '/projects/compare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamIndexRoute = TeamIndexRouteImport.update({
+  id: '/team/',
+  path: '/team/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamSlugRoute = TeamSlugRouteImport.update({
+  id: '/team/$slug',
+  path: '/team/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -383,88 +383,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/search': {
-      id: '/search'
-      path: '/search'
-      fullPath: '/search'
-      preLoaderRoute: typeof SearchRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/safety': {
-      id: '/safety'
-      path: '/safety'
-      fullPath: '/safety'
-      preLoaderRoute: typeof SafetyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/quote-request': {
-      id: '/quote-request'
-      path: '/quote-request'
-      fullPath: '/quote-request'
-      preLoaderRoute: typeof QuoteRequestRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cookie-policy': {
-      id: '/cookie-policy'
-      path: '/cookie-policy'
-      fullPath: '/cookie-policy'
-      preLoaderRoute: typeof CookiePolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/certifications': {
-      id: '/certifications'
-      path: '/certifications'
-      fullPath: '/certifications'
-      preLoaderRoute: typeof CertificationsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/accessibility': {
-      id: '/accessibility'
-      path: '/accessibility'
-      fullPath: '/accessibility'
-      preLoaderRoute: typeof AccessibilityRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -474,46 +397,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/team/': {
-      id: '/team/'
-      path: '/team'
-      fullPath: '/team/'
-      preLoaderRoute: typeof TeamIndexRouteImport
+    '/certifications': {
+      id: '/certifications'
+      path: '/certifications'
+      fullPath: '/certifications'
+      preLoaderRoute: typeof CertificationsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/': {
-      id: '/services/'
-      path: '/services'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesIndexRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects/': {
-      id: '/projects/'
-      path: '/projects'
-      fullPath: '/projects/'
-      preLoaderRoute: typeof ProjectsIndexRouteImport
+    '/cookie-policy': {
+      id: '/cookie-policy'
+      path: '/cookie-policy'
+      fullPath: '/cookie-policy'
+      preLoaderRoute: typeof CookiePolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/news/': {
-      id: '/news/'
-      path: '/news'
-      fullPath: '/news/'
-      preLoaderRoute: typeof NewsIndexRouteImport
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/industries/': {
-      id: '/industries/'
-      path: '/industries'
-      fullPath: '/industries/'
-      preLoaderRoute: typeof IndustriesIndexRouteImport
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quote-request': {
+      id: '/quote-request'
+      path: '/quote-request'
+      fullPath: '/quote-request'
+      preLoaderRoute: typeof QuoteRequestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safety': {
+      id: '/safety'
+      path: '/safety'
+      fullPath: '/safety'
+      preLoaderRoute: typeof SafetyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers/': {
@@ -523,39 +488,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CareersIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/team/$slug': {
-      id: '/team/$slug'
-      path: '/team/$slug'
-      fullPath: '/team/$slug'
-      preLoaderRoute: typeof TeamSlugRouteImport
+    '/careers/$slug': {
+      id: '/careers/$slug'
+      path: '/careers/$slug'
+      fullPath: '/careers/$slug'
+      preLoaderRoute: typeof CareersSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/$slug': {
-      id: '/services/$slug'
-      path: '/services/$slug'
-      fullPath: '/services/$slug'
-      preLoaderRoute: typeof ServicesSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects/compare': {
-      id: '/projects/compare'
-      path: '/projects/compare'
-      fullPath: '/projects/compare'
-      preLoaderRoute: typeof ProjectsCompareRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects/$slug': {
-      id: '/projects/$slug'
-      path: '/projects/$slug'
-      fullPath: '/projects/$slug'
-      preLoaderRoute: typeof ProjectsSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news/$slug': {
-      id: '/news/$slug'
-      path: '/news/$slug'
-      fullPath: '/news/$slug'
-      preLoaderRoute: typeof NewsSlugRouteImport
+    '/industries/': {
+      id: '/industries/'
+      path: '/industries'
+      fullPath: '/industries/'
+      preLoaderRoute: typeof IndustriesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industries/$slug': {
@@ -565,11 +509,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/careers/$slug': {
-      id: '/careers/$slug'
-      path: '/careers/$slug'
-      fullPath: '/careers/$slug'
-      preLoaderRoute: typeof CareersSlugRouteImport
+    '/news/': {
+      id: '/news/'
+      path: '/news'
+      fullPath: '/news/'
+      preLoaderRoute: typeof NewsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news/$slug': {
+      id: '/news/$slug'
+      path: '/news/$slug'
+      fullPath: '/news/$slug'
+      preLoaderRoute: typeof NewsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/': {
+      id: '/projects/'
+      path: '/projects'
+      fullPath: '/projects/'
+      preLoaderRoute: typeof ProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/$slug': {
+      id: '/projects/$slug'
+      path: '/projects/$slug'
+      fullPath: '/projects/$slug'
+      preLoaderRoute: typeof ProjectsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/compare': {
+      id: '/projects/compare'
+      path: '/projects/compare'
+      fullPath: '/projects/compare'
+      preLoaderRoute: typeof ProjectsCompareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/': {
+      id: '/team/'
+      path: '/team'
+      fullPath: '/team/'
+      preLoaderRoute: typeof TeamIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team/$slug': {
+      id: '/team/$slug'
+      path: '/team/$slug'
+      fullPath: '/team/$slug'
+      preLoaderRoute: typeof TeamSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -607,3 +607,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

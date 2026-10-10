@@ -5,11 +5,11 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteShell } from "../components/layout/site-shell";
 
 function NotFoundComponent() {
@@ -34,12 +34,9 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-[60dvh] items-center justify-center bg-background px-4">
@@ -85,8 +82,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "TitanBuild Construction Group — Building Tomorrow's Infrastructure" },
       { name: "twitter:description", content: "TitanBuild Construction Group is a national general contractor delivering commercial, industrial, civil, and residential projects with safety, precision, and integrity since 1977." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4dc3ceb-3e36-41da-bf97-9651a6a779e3/id-preview-132962e7--336dc429-286c-42f7-a94f-07f6858c90de.lovable.app-1781368954540.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4dc3ceb-3e36-41da-bf97-9651a6a779e3/id-preview-132962e7--336dc429-286c-42f7-a94f-07f6858c90de.lovable.app-1781368954540.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
